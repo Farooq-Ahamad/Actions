@@ -1,0 +1,16 @@
+name: workflow-dependent
+
+on:
+  workflow_run:
+    workflows: [First-Workflow]
+    types: [completed]
+
+jobs:
+  build:
+    runs-on: build-server 
+
+    steps:
+      - name: workflow dependency
+        run: echo "i am running becoz of dependent worflow is completed"
+
+        

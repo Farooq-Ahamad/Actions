@@ -1,8 +1,9 @@
-  name: Build and deploy React App
+name: First-Workflow
 
 on:
   push:
     branches:
+    
       - 'feature/*'
 
 jobs:
@@ -13,10 +14,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Setup Node.js
+      - name: Check Node.js version
         run: |
           node -v
           npm -v
 
-#        
-        
+  dependent:
+    runs-on: build-server
+    needs: build 
+
+    steps:
+      - name: Check git version
+        run: |
+          git --version
+
