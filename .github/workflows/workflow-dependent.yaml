@@ -1,4 +1,4 @@
-name: workflow-run
+name: workflow-dependent
 
 on:
   workflow_run:
