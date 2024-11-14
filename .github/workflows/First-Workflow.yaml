@@ -17,4 +17,14 @@ jobs:
         run: |
           node -v
           npm -v
+
+  dependent:
+    runs-on: build-server
+    needs: build 
+
+    steps:
+     - name: Check Node.js version
+        run: |
+          git -version
+
         
