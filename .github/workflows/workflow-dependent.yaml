@@ -11,6 +11,6 @@ jobs:
 
     steps:
       - name: workflow dependency
-        run: echo "i am running becoz of dependent workflows"
+        run: echo "i am running becoz of dependent worflow is completed"
 
         
