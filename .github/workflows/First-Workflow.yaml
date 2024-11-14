@@ -23,7 +23,7 @@ jobs:
     needs: build 
 
     steps:
-     - name: Check Node.js version
-         run: |
-           git -version
+      - name: Check Node.js version
+          run: |
+            git -version
 
