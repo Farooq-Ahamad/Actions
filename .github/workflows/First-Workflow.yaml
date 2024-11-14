@@ -3,7 +3,8 @@ name: First-Workflow
 on:
   push:
     branches:
-      - feature/*
+    
+      - 'feature/*'
 
 jobs:
   build:
