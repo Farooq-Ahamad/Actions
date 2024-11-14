@@ -1,4 +1,4 @@
-name: Build and deploy React App
+name: workflow-depenedent
 
 on:
   workflow_run:
