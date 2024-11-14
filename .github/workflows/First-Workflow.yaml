@@ -24,6 +24,6 @@ jobs:
 
     steps:
       - name: Check Node.js version
-          run: |
-            git --version
+        run: |
+          git --version
 
