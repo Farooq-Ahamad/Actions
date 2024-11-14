@@ -1,8 +1,8 @@
-name: workflow-depenedent
+name: workflow-run
 
 on:
   workflow_run:
-    workflows: [First-Workflow]
+    workflows: [Build and deploy React App]
     types: [completed]
 
 jobs:
