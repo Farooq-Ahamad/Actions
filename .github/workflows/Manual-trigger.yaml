@@ -1,10 +1,10 @@
 name: Manual-trigger
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
 
   jobs:
-    manula_trigger:
+    manual_trigger:
       runs-on: build-server
 
       steps: 
