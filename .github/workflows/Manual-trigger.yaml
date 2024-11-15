@@ -3,10 +3,10 @@ name: Manual-trigger
 on:
   workflow_dispatch:
 
-  jobs:
-    manual_trigger:
-      runs-on: build-server
+jobs:
+  manual_trigger:
+    runs-on: build-server
 
-      steps: 
-        - run: echo $GITHUB_SHA
-            
+    steps: 
+      - run: echo $GITHUB_SHA
+      
