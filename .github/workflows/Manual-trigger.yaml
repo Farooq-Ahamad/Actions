@@ -6,7 +6,7 @@ on:
       string:
         description: "A string input"
         type: string
-        default: "45"
+        default: "set a no"
 
 jobs:
   manual_trigger:
