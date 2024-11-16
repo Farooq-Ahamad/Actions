@@ -2,11 +2,14 @@ name: Expressions & Contexts
 
 on:
   push
-
 run-name: "Expressions with @${{ github.actor }} on event: ${{ github.event_name }}"
 
 jobs:
   using-expressions-and-contexts:
+run-name: "Expressions with @${{ github.actor }} events: ${{ github.event_name }}"
+
+jobs:
+  Using Expressions_Contexts:
     runs-on: build-server
     steps:
       - name: Displaying some expressions
@@ -15,3 +18,7 @@ jobs:
           echo "Secrets Context: ${{ toJson(secrets) }}"
           echo "Job Context: ${{ toJson(job) }}"
           echo "Steps Context: ${{ toJson(steps) }}"
+          echo "${{ toJson(github) }}"
+          echo "${{ toJson(secrets) }}"
+          echo "${{ toJson(job) }}"
+          echo "${{ toJson(steps) }}"
