@@ -1,0 +1,17 @@
+name: Expressions & Contexts
+
+on:
+  push
+run-name: "Expressions with @${{ github.actor }}" events: ${{ github.event_name }}"
+
+jobs:
+  Using Expressions & Contexts
+    runs-on: build-server
+    steps:
+      - name: Displaying some expressions
+        run: |
+          echo "${{ toJson(github) }}"
+          echo "${{ toJson(secrets) }}"
+          echo "${{ toJson(job) }}"
+          echo "${{ toJson(steps) }}"
+
