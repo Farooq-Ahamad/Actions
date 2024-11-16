@@ -1,7 +1,9 @@
 name: Environment-Variables
 
 on:
-  push: [main]
+  push:
+    branches:
+      - main
 
 env: 
   WF_LEVEL_ENV: This is Workflow level ENV
