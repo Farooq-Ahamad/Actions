@@ -5,7 +5,7 @@ on:
 run-name: "Expressions with @${{ github.actor }} events: ${{ github.event_name }}"
 
 jobs:
-  Using Expressions & Contexts:
+  Using Expressions_Contexts:
     runs-on: build-server
     steps:
       - name: Displaying some expressions
