@@ -7,7 +7,7 @@ env:
   WF_LEVEL_ENV: This is Workflow level ENV
 
 jobs:
-  Envs:
+  env and contexts:
     runs-on: build-server
     env:
       JOB_LEVEL_ENV: This is Job level ENV
