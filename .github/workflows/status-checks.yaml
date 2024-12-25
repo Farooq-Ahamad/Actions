@@ -1,5 +1,5 @@
 name: status check functions   
-on: [push]
+on: [push] # on main
 
 jobs:
   status_functions:
