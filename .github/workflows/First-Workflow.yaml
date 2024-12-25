@@ -1,31 +1,24 @@
-name: First-Workflow
-
-on:
-  push:
-    branches:
-    
-      - 'feature/*'
+name: status check functions
+on: [push]
 
 jobs:
-  build:
-    runs-on: build-server 
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Check Node.js version
-        run: |
-          node -v
-          npm -v
-
-  dependent:
+  status-functions
     runs-on: build-server
-    needs: build 
-
     steps:
-      - name: Check git version
-        run: |
-          git --version
+      - name:step 1
+        run: sleep 20
 
-#skip actions
+      - name: step2
+        id: step-2
+
+      - name: runs on failure
+        if: steps.step-2.conclusion == failure
+        run: echo 'step 2 has failure'
+
+      - name: Always runs
+        if: always()
+        run: echo 'Always runs'
+
+      - name: Always runs
+        if: cancelled()
+        run: echo 'runs on Cancelled'
