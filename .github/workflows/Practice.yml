@@ -1,0 +1,25 @@
+name: status check functions
+on: [push]
+
+jobs:
+  status-functions
+    runs-on: build-server
+    steps:
+      - name:step 1
+        run: sleep 20
+
+      - name: step2
+        id: step-2
+
+      - name: runs on failure
+        if: steps.step-2.conclusion == failure
+        run: echo 'step 2 has failure'
+
+      - name: Always runs
+        if: always()
+        run: echo 'Always runs'
+
+      - name: Always runs
+        if: cancelled()
+        run: echo 'runs on Cancelled'
+
