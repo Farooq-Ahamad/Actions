@@ -5,7 +5,7 @@ jobs:
   status_functions:
     runs-on: build-server
     steps:
-      - name:step 1
+      - name: step 1
         run: sleep 20
 
       - name: step2
