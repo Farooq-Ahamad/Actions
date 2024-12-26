@@ -14,7 +14,7 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v3
-      run: ls -a   
+    - run: ls -a   
 
   log-context-and-inputs: 
     runs-on: ubuntu
