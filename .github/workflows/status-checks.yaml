@@ -1,25 +1,25 @@
-name: status check functions   
-on: [push] # on main
+name: reusable_workflow
+on:
+  workflow_call:
+    inputs:
+      name:
+        description: "input"
+        type: string
+        default: "Farooq"
+        required: false
 
-jobs:
-  status_functions:
-    runs-on: ubuntu
-    steps:
-      - name: step 1
-        run: sleep 20
+ jobs:
+   checkout:
+     runs-on: ubuntu
+     steps:
+     - name: checkout
+       uses: actions/checkout@v3
+       run: ls -a   
 
-      - name: step2
-        id: step-2
-        run: echo 'this is step2'
-    
-      - name: runs on failure
-        if: steps.step-2.conclusion == 'failure'
-        run: echo 'step 2 has failure'
-
-      - name: Always runs
-        if: always()
-        run: echo 'Always runs'
-
-      - name: Always runs
-        if: cancelled()
-        run: echo 'runs on Cancelled'
+    log-context-and-inputs: 
+      runs-on: ubuntu
+      steps:
+      - name: Display content
+        run: echo '{{ toJSON(github) }}'        
+      - name: Display name
+        run: echo {{ inputs.name }}  
