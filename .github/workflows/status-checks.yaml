@@ -22,4 +22,4 @@ jobs:
     - name: Display content
       run: echo '{{ toJSON(github) }}'        
     - name: Display name
-      run: echo {{ inputs.name }}  
+      run: echo {{ inputs.name }}    
