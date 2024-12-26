@@ -9,17 +9,17 @@ on:
         required: false
 
 jobs:
-   checkout:
-     runs-on: ubuntu
-     steps:
-     - name: checkout
-       uses: actions/checkout@v3
-       run: ls -a   
+  checkout:
+    runs-on: ubuntu
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3
+      run: ls -a   
 
-    log-context-and-inputs: 
-      runs-on: ubuntu
-      steps:
-      - name: Display content
-        run: echo '{{ toJSON(github) }}'        
-      - name: Display name
-        run: echo {{ inputs.name }}  
+  log-context-and-inputs: 
+    runs-on: ubuntu
+    steps:
+    - name: Display content
+      run: echo '{{ toJSON(github) }}'        
+    - name: Display name
+      run: echo {{ inputs.name }}  
